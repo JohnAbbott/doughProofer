@@ -14,6 +14,8 @@ lv_obj_t *ui_operationsPanel;
 lv_obj_t *ui_delayStart;
 lv_obj_t *ui_delayStartLabel;
 lv_obj_t *ui_delayStartAmount;
+lv_obj_t *ui_proofTypeLabel;
+lv_obj_t *ui_proofType;
 lv_obj_t *ui_TemperatureValue;
 lv_obj_t *ui_humidity;
 lv_obj_t *ui_LightsOn;
@@ -93,9 +95,9 @@ lv_obj_set_style_text_font(ui_humidityLabel, &lv_font_montserrat_24, LV_PART_MAI
 
 ui_operationsPanel = lv_obj_create(ui_Screen1);
 lv_obj_set_width( ui_operationsPanel, 226);
-lv_obj_set_height( ui_operationsPanel, 204);
+lv_obj_set_height( ui_operationsPanel, 250);
 lv_obj_set_x( ui_operationsPanel, 108 );
-lv_obj_set_y( ui_operationsPanel, 94 );
+lv_obj_set_y( ui_operationsPanel, 114 );
 lv_obj_set_align( ui_operationsPanel, LV_ALIGN_CENTER );
 lv_obj_clear_flag( ui_operationsPanel, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
 lv_obj_set_style_radius(ui_operationsPanel, 20, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -109,7 +111,7 @@ ui_delayStart = lv_switch_create(ui_Screen1);
 lv_obj_set_width( ui_delayStart, 50);
 lv_obj_set_height( ui_delayStart, 25);
 lv_obj_set_x( ui_delayStart, 39 );
-lv_obj_set_y( ui_delayStart, 24 );
+lv_obj_set_y( ui_delayStart, 35 );
 lv_obj_set_align( ui_delayStart, LV_ALIGN_CENTER );
 lv_obj_set_style_bg_color(ui_delayStart, lv_color_hex(0x9CBED5), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_bg_opa(ui_delayStart, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -124,22 +126,43 @@ ui_delayStartLabel = lv_label_create(ui_Screen1);
 lv_obj_set_width( ui_delayStartLabel, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_delayStartLabel, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_delayStartLabel, 138 );
-lv_obj_set_y( ui_delayStartLabel, 24 );
+lv_obj_set_y( ui_delayStartLabel, 35 );
 lv_obj_set_align( ui_delayStartLabel, LV_ALIGN_CENTER );
 lv_label_set_text(ui_delayStartLabel,"Delay Start");
 lv_obj_set_style_text_font(ui_delayStartLabel, &lv_font_montserrat_24, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_delayStartAmount = lv_dropdown_create(ui_Screen1);
-lv_dropdown_set_options( ui_delayStartAmount, "0\n1\n2\n3\n4\n5\n6" );
-lv_obj_set_width( ui_delayStartAmount, 106);
+lv_dropdown_set_options( ui_delayStartAmount, "30 min\n60 min\n90 min\n120 min" );
+lv_obj_set_width( ui_delayStartAmount, 135);
 lv_obj_set_height( ui_delayStartAmount, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_delayStartAmount, 129 );
-lv_obj_set_y( ui_delayStartAmount, 67 );
+lv_obj_set_y( ui_delayStartAmount, 79 );
 lv_obj_set_align( ui_delayStartAmount, LV_ALIGN_CENTER );
 lv_obj_add_flag( ui_delayStartAmount, LV_OBJ_FLAG_SCROLL_ON_FOCUS );   /// Flags
 lv_obj_set_style_text_font(ui_delayStartAmount, &lv_font_montserrat_24, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_bg_color(ui_delayStartAmount, lv_color_hex(0x9CBED5), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_bg_opa(ui_delayStartAmount, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+
+ui_proofTypeLabel = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_proofTypeLabel, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_proofTypeLabel, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_proofTypeLabel, 129 );
+lv_obj_set_y( ui_proofTypeLabel, -5 );
+lv_obj_set_align( ui_proofTypeLabel, LV_ALIGN_CENTER );
+lv_label_set_text(ui_proofTypeLabel,"Proof Type");
+lv_obj_set_style_text_font(ui_proofTypeLabel, &lv_font_montserrat_24, LV_PART_MAIN| LV_STATE_DEFAULT);
+
+ui_proofType = lv_dropdown_create(ui_Screen1);
+lv_dropdown_set_options( ui_proofType, "Bread\nCroissant" );
+lv_obj_set_width( ui_proofType, 160);
+lv_obj_set_height( ui_proofType, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_proofType, 129 );
+lv_obj_set_y( ui_proofType, -43 );
+lv_obj_set_align( ui_proofType, LV_ALIGN_CENTER );
+lv_obj_add_flag( ui_proofType, LV_OBJ_FLAG_SCROLL_ON_FOCUS );   /// Flags
+lv_obj_set_style_text_font(ui_proofType, &lv_font_montserrat_24, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_proofType, lv_color_hex(0x9CBED5), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_bg_opa(ui_proofType, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_TemperatureValue = lv_label_create(ui_Screen1);
 lv_obj_set_width( ui_TemperatureValue, LV_SIZE_CONTENT);  /// 1
@@ -170,7 +193,7 @@ ui_LightsOn = lv_switch_create(ui_Screen1);
 lv_obj_set_width( ui_LightsOn, 50);
 lv_obj_set_height( ui_LightsOn, 25);
 lv_obj_set_x( ui_LightsOn, 43 );
-lv_obj_set_y( ui_LightsOn, 125 );
+lv_obj_set_y( ui_LightsOn, 145 );
 lv_obj_set_align( ui_LightsOn, LV_ALIGN_CENTER );
 lv_obj_set_style_bg_color(ui_LightsOn, lv_color_hex(0x9CBED5), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_bg_opa(ui_LightsOn, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -182,7 +205,7 @@ ui_LightsLabel = lv_label_create(ui_Screen1);
 lv_obj_set_width( ui_LightsLabel, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_LightsLabel, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_LightsLabel, 117 );
-lv_obj_set_y( ui_LightsLabel, 126 );
+lv_obj_set_y( ui_LightsLabel, 146 );
 lv_obj_set_align( ui_LightsLabel, LV_ALIGN_CENTER );
 lv_label_set_text(ui_LightsLabel,"Lights");
 lv_obj_set_style_text_font(ui_LightsLabel, &lv_font_montserrat_24, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -191,7 +214,7 @@ ui_startButton = lv_btn_create(ui_Screen1);
 lv_obj_set_width( ui_startButton, 249);
 lv_obj_set_height( ui_startButton, 92);
 lv_obj_set_x( ui_startButton, -10 );
-lv_obj_set_y( ui_startButton, 266 );
+lv_obj_set_y( ui_startButton, 306 );
 lv_obj_set_align( ui_startButton, LV_ALIGN_CENTER );
 lv_obj_add_flag( ui_startButton, LV_OBJ_FLAG_SCROLL_ON_FOCUS );   /// Flags
 lv_obj_clear_flag( ui_startButton, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
@@ -216,7 +239,7 @@ lv_obj_set_height( ui_VersionInfo, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_VersionInfo, 0 );
 lv_obj_set_y( ui_VersionInfo, 383 );
 lv_obj_set_align( ui_VersionInfo, LV_ALIGN_CENTER );
-lv_label_set_text(ui_VersionInfo,"Rainbird Baking V.1.0 - June 2025");
+lv_label_set_text(ui_VersionInfo,"Rainbird Baking 1.1 - May 2026");
 
 lv_obj_add_event_cb(ui_delayStart, ui_event_delayStart, LV_EVENT_ALL, NULL);
 
@@ -236,6 +259,8 @@ ui_operationsPanel= NULL;
 ui_delayStart= NULL;
 ui_delayStartLabel= NULL;
 ui_delayStartAmount= NULL;
+ui_proofTypeLabel= NULL;
+ui_proofType= NULL;
 ui_TemperatureValue= NULL;
 ui_humidity= NULL;
 ui_LightsOn= NULL;

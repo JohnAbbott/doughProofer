@@ -23,6 +23,8 @@ extern void ui_event_delayStart( lv_event_t * e);
 extern lv_obj_t *ui_delayStart;
 extern lv_obj_t *ui_delayStartLabel;
 extern lv_obj_t *ui_delayStartAmount;
+extern lv_obj_t *ui_proofTypeLabel;
+extern lv_obj_t *ui_proofType;
 extern lv_obj_t *ui_TemperatureValue;
 extern lv_obj_t *ui_humidity;
 extern lv_obj_t *ui_LightsOn;
@@ -37,4 +39,3 @@ extern lv_obj_t *ui_VersionInfo;
 #endif
 
 #endif
-
