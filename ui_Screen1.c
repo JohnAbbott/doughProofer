@@ -245,9 +245,17 @@ lv_obj_set_height( ui_VersionInfo, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_VersionInfo, 0 );
 lv_obj_set_y( ui_VersionInfo, 383 );
 lv_obj_set_align( ui_VersionInfo, LV_ALIGN_CENTER );
-lv_label_set_text(ui_VersionInfo,"Rainbird Baking V.1.2 - May 2026");
+lv_label_set_text(ui_VersionInfo,"Rainbird Baking V.1.3 - May 2026");
 
-lv_obj_add_event_cb(ui_delayStart, ui_event_delayStart, LV_EVENT_ALL, NULL);
+lv_obj_clear_flag(ui_tempPanel, LV_OBJ_FLAG_CLICKABLE);
+lv_obj_clear_flag(ui_humidityPanel, LV_OBJ_FLAG_CLICKABLE);
+lv_obj_clear_flag(ui_operationsPanel, LV_OBJ_FLAG_CLICKABLE);
+lv_obj_clear_flag(ui_temperatureLabel, LV_OBJ_FLAG_CLICKABLE);
+lv_obj_clear_flag(ui_humidityLabel, LV_OBJ_FLAG_CLICKABLE);
+lv_obj_clear_flag(ui_delayStartLabel, LV_OBJ_FLAG_CLICKABLE);
+lv_obj_clear_flag(ui_proofTypeLabel, LV_OBJ_FLAG_CLICKABLE);
+lv_obj_clear_flag(ui_LightsLabel, LV_OBJ_FLAG_CLICKABLE);
+lv_obj_clear_flag(ui_VersionInfo, LV_OBJ_FLAG_CLICKABLE);
 lv_obj_move_foreground(ui_operationsPanel);
 lv_obj_move_foreground(ui_delayStartAmount);
 lv_obj_move_foreground(ui_proofType);
