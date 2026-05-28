@@ -131,14 +131,17 @@ lv_obj_set_align( ui_delayStartLabel, LV_ALIGN_CENTER );
 lv_label_set_text(ui_delayStartLabel,"Delay Start");
 lv_obj_set_style_text_font(ui_delayStartLabel, &lv_font_montserrat_24, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_delayStartAmount = lv_dropdown_create(ui_operationsPanel);
+ui_delayStartAmount = lv_dropdown_create(ui_Screen1);
 lv_dropdown_set_options( ui_delayStartAmount, "30 min\n60 min\n90 min\n120 min" );
+lv_dropdown_set_dir( ui_delayStartAmount, LV_DIR_BOTTOM );
+lv_dropdown_set_symbol( ui_delayStartAmount, LV_SYMBOL_DOWN );
 lv_obj_set_width( ui_delayStartAmount, 135);
 lv_obj_set_height( ui_delayStartAmount, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_delayStartAmount, 0 );
-lv_obj_set_y( ui_delayStartAmount, 44 );
+lv_obj_set_x( ui_delayStartAmount, 108 );
+lv_obj_set_y( ui_delayStartAmount, 158 );
 lv_obj_set_align( ui_delayStartAmount, LV_ALIGN_CENTER );
 lv_obj_add_flag( ui_delayStartAmount, LV_OBJ_FLAG_SCROLL_ON_FOCUS );   /// Flags
+lv_obj_add_flag( ui_delayStartAmount, LV_OBJ_FLAG_CLICKABLE );   /// Flags
 lv_obj_set_style_text_font(ui_delayStartAmount, &lv_font_montserrat_24, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_bg_color(ui_delayStartAmount, lv_color_hex(0x9CBED5), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_bg_opa(ui_delayStartAmount, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -147,19 +150,22 @@ ui_proofTypeLabel = lv_label_create(ui_operationsPanel);
 lv_obj_set_width( ui_proofTypeLabel, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_proofTypeLabel, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_proofTypeLabel, 0 );
-lv_obj_set_y( ui_proofTypeLabel, -94 );
+lv_obj_set_y( ui_proofTypeLabel, -99 );
 lv_obj_set_align( ui_proofTypeLabel, LV_ALIGN_CENTER );
 lv_label_set_text(ui_proofTypeLabel,"Proof Type");
 lv_obj_set_style_text_font(ui_proofTypeLabel, &lv_font_montserrat_24, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_proofType = lv_dropdown_create(ui_operationsPanel);
+ui_proofType = lv_dropdown_create(ui_Screen1);
 lv_dropdown_set_options( ui_proofType, "Bread\nCroissant" );
+lv_dropdown_set_dir( ui_proofType, LV_DIR_BOTTOM );
+lv_dropdown_set_symbol( ui_proofType, LV_SYMBOL_DOWN );
 lv_obj_set_width( ui_proofType, 160);
 lv_obj_set_height( ui_proofType, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_proofType, 0 );
-lv_obj_set_y( ui_proofType, -56 );
+lv_obj_set_x( ui_proofType, 108 );
+lv_obj_set_y( ui_proofType, 58 );
 lv_obj_set_align( ui_proofType, LV_ALIGN_CENTER );
 lv_obj_add_flag( ui_proofType, LV_OBJ_FLAG_SCROLL_ON_FOCUS );   /// Flags
+lv_obj_add_flag( ui_proofType, LV_OBJ_FLAG_CLICKABLE );   /// Flags
 lv_obj_set_style_text_font(ui_proofType, &lv_font_montserrat_24, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_bg_color(ui_proofType, lv_color_hex(0x9CBED5), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_bg_opa(ui_proofType, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -239,9 +245,10 @@ lv_obj_set_height( ui_VersionInfo, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_VersionInfo, 0 );
 lv_obj_set_y( ui_VersionInfo, 383 );
 lv_obj_set_align( ui_VersionInfo, LV_ALIGN_CENTER );
-lv_label_set_text(ui_VersionInfo,"Rainbird Baking 1.1 - May 2026");
+lv_label_set_text(ui_VersionInfo,"Rainbird Baking V.1.2 - May 2026");
 
 lv_obj_add_event_cb(ui_delayStart, ui_event_delayStart, LV_EVENT_ALL, NULL);
+lv_obj_move_foreground(ui_operationsPanel);
 lv_obj_move_foreground(ui_delayStartAmount);
 lv_obj_move_foreground(ui_proofType);
 

@@ -26,8 +26,8 @@
 #include "ui.h"
 #include "DHT.h"
 
-static const char APP_VERSION[] = "1.1";
-static const char VERSION_LABEL[] = "Rainbird Baking 1.1 - May 2026";
+static const char APP_VERSION[] = "1.2";
+static const char VERSION_LABEL[] = "Rainbird Baking V.1.2 - May 2026";
 
 static const uint8_t DHTPIN = 4;     // DHT22 connected to pin 4
 static const uint8_t HEAT_RELAY_PIN = 6;
