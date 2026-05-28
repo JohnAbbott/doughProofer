@@ -1,0 +1,16 @@
+{
+  "codename": "Bod300",
+  "ttf_path": "/assets/BodoniFLF-Roman.ttf",
+  "bin_path": "/assets/ui_font_Bod300.bin",
+  "c_path": "/assets/ui_font_Bod300.c",
+  "cfg_path": "/assets/ui_font_Bod300.fcfg",
+  "size": 300,
+  "bpp": 2,
+  "letters": 0,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "1234567890",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}
