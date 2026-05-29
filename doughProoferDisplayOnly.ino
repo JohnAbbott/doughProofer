@@ -26,8 +26,8 @@
 #include "ui.h"
 #include "DHT.h"
 
-static const char APP_VERSION[] = "1.3";
-static const char VERSION_LABEL[] = "Rainbird Baking V.1.3 - May 2026";
+static const char APP_VERSION[] = "1.2";
+static const char VERSION_LABEL[] = "Rainbird Baking V.1.2 - May 2026";
 
 static const uint8_t DHTPIN = 4;     // DHT22 connected to pin 4
 static const uint8_t HEAT_RELAY_PIN = 6;
@@ -155,8 +155,8 @@ void updateProofing(float temperatureF)
     }
 }
 
-/* Initialize the GIGA Display Shield with the rotation expected by the Arduino touch driver. */
-Arduino_H7_Video Display(800, 480, GigaDisplayShield);
+/* Initialize the GIGA Display Shield with a resolution of 800x480 pixels */
+Arduino_H7_Video Display(480, 800, GigaDisplayShield);
 Arduino_GigaDisplayTouch Touch;
 
 #if (LVGL_VERSION_MAJOR >= 9)
